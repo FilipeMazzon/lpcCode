@@ -126,6 +126,96 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
     	}
     }
 ```
+##### Sensor de luminosidade
+```
+static void vSenderTaskLum( void *pvParameters )
+{
+    portBASE_TYPE xStatus;
+    const portTickType xTicksToWait = 600 / portTICK_RATE_MS;
+
+	/* As per most tasks, this task is implemented within an infinite loop. */
+	for( ;; )
+	{
+		xStatus = xQueueSendToBack( xQueue, pvParameters, xTicksToWait );
+
+		if( xStatus != pdPASS )
+		{
+			/* We could not write to the queue because it was full - this must
+			be an error as the receiving task should make space in the queue
+			as soon as both sending tasks are in the Blocked state. */
+			//vPrintString( "Could not send to the queue.\n" );
+		}
+		//Leitura do sensor de luminosidade
+		lux = light_read();
+		xStructsToSend[ 1 ].ucValue = lux;
+		/* Allow the other sender task to execute. */
+		taskYIELD();
+
+		vTaskDelay( xTicksToWait );
+	}
+}
+```
+##### trimpot
+```
+static void vSenderTaskPot( void *pvParameters )
+{
+    portBASE_TYPE xStatus;
+    const portTickType xTicksToWait = 200 / portTICK_RATE_MS;
+    uint16_t ledOn = 0;
+    uint16_t ledOff = 0;
+	/* As per most tasks, this task is implemented within an infinite loop. */
+	for( ;; )
+	{
+		/* trimpot*/
+		ADC_StartCmd(LPC_ADC,ADC_START_NOW);
+		//Wait conversion complete
+		while (!(ADC_ChannelGetStatus(LPC_ADC,ADC_CHANNEL_0,ADC_DATA_DONE)));
+		trim = ADC_ChannelGetData(LPC_ADC,ADC_CHANNEL_0);
+		xStructsToSend[ 0 ].ucValue = ((float)trim/4095)*100;
+
+		if (trim <= 409){// ate 10%
+			//ledOn = (3 << 0);
+			ledOn = (3 << 7)|(3 << 8);
+		} else
+		if (trim > 409 && trim <= 1228){// ate 30%
+			ledOn = (3 << 7)|(3 << 8)|
+					(3 << 9)|(3 << 10);
+		} else
+		if (trim > 1228 && trim <= 2457){//ate 60%
+			ledOn = (3 << 7)|(3 << 8)|
+					(3 << 9)|(3 << 10)|
+					(3 << 11)|(3 << 12);
+		} else
+		if (trim > 2457 && trim <= 3685){// ate 90%
+			ledOn = (3 << 7)|(3 << 8)|
+					(3 << 9)|(3 << 10)|
+					(3 << 11)|(3 << 12)|
+					(3 << 13)|(3 << 14);
+		} else
+		if (trim > 3685){// acima de 90%
+			ledOn = (3 << 0)|(3 << 2)|
+					(3 << 4)|(3 << 6);
+		}
+		//ledOn = (3 << 0) | (3 << 2) |(3 << 4) | (3 << 6);
+		pca9532_setLeds(ledOn, 0xffff);
+
+		xStatus = xQueueSendToBack( xQueue, pvParameters, xTicksToWait );
+
+		if( xStatus != pdPASS )
+		{
+			/* We could not write to the queue because it was full - this must
+			be an error as the receiving task should make space in the queue
+			as soon as both sending tasks are in the Blocked state. */
+			//vPrintString( "Could not send to the queue.\n" );
+		}
+
+		/* Allow the other sender task to execute. */
+		taskYIELD();
+
+		vTaskDelay( xTicksToWait );
+	}
+}
+```
 ### contatos
 [Filipe Firmino](mailto:filipefirmino@gec.inatel.br)
 
