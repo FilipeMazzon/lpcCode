@@ -54,7 +54,7 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
     	}
     }
     ```
-   ##### Contador 2
+ ##### Contador 2
     ```c
     static void vSenderTaskCount2( void *pvParameters )
     {
@@ -68,7 +68,7 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
     	}
     }
     ```
-##### display
+ ##### display
     ```c
     static void vReceiverTask( void *pvParameters )
     {
@@ -128,8 +128,11 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
     ```
 ### contatos
 [Filipe Firmino](mailto:filipefirmino@gec.inatel.br)
+
 [Filipe Mazzon Ribeiro](mailto:filipemazzon@gec.inatel.br)
+
 [Matheus Henrique da Silva](mailto:matheushenriquesilva@gec.inatel.br)
+
 ### licensa
 
 [MIT](/blob/master/LICENSE)
