@@ -41,7 +41,7 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
 ### implementacao
 #### Tasks
 ##### Contador 1
-    ```c
+```
     static void vSenderTaskCount1( void *pvParameters )
     {
     //Definindo o tempo de aguardo de 100ms
@@ -53,9 +53,9 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
     		vTaskDelay( xTicksToWait );
     	}
     }
-    ```
- ##### Contador 2
-    ```c
+ ```
+##### Contador 2
+```
     static void vSenderTaskCount2( void *pvParameters )
     {
     //Definindo o tempo de aguardo de 100ms
@@ -67,9 +67,9 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
     		vTaskDelay( xTicksToWait );
     	}
     }
-    ```
- ##### display
-    ```c
+```
+##### display
+```
     static void vReceiverTask( void *pvParameters )
     {
     xData xReceivedStructure;
@@ -125,7 +125,7 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
     		}
     	}
     }
-    ```
+```
 ### contatos
 [Filipe Firmino](mailto:filipefirmino@gec.inatel.br)
 
