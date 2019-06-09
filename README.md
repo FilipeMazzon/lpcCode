@@ -6,7 +6,14 @@ Este e um projeto para testar o lpc1769 utilizando o FreeRTOS lidando com tarefa
 + [Tecnologias](#tecnologias)
 + [instalacao](#instalacao)
 + [requisitos](#requisitos)
++ [diagramas](#diagramas)
+    + [Diagrama de Blocos](#diagrama-de-blocos)
+    + [Camada de Hardware](#camada-de-hardware)
 + [Implementacao](#implementacao)
+    + [Tasks](#tasks)
+        + [Contador 1](#contador-1)
+        + [Contador 2](#contador-2)
+        + [display](#display)
 + [contatos](#contatos)
 + [licensa](#licensa)
 
@@ -24,9 +31,16 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
 
 ### requisitos
 
+
+### Diagramas
+#### Diagrama de Blocos
+
+![](https://github.com/FilipeMazzon/lpcCode/blob/master/images/diagrama-de-blocos.jpg)
+#### Camada de Hardware
+![](https://github.com/FilipeMazzon/lpcCode/blob/master/images/camada-de-hardware.jpeg)
 ### implementacao
-+ Tasks
-    + Contador 1
+#### Tasks
+##### Contador 1
     ```c
     static void vSenderTaskCount1( void *pvParameters )
     {
@@ -40,7 +54,7 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
     	}
     }
     ```
-    + Contador 2
+   ##### Contador 2
     ```c
     static void vSenderTaskCount2( void *pvParameters )
     {
@@ -54,7 +68,7 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
     	}
     }
     ```
-    + display
+##### display
     ```c
     static void vReceiverTask( void *pvParameters )
     {
@@ -113,10 +127,9 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
     }
     ```
 ### contatos
-
+[Filipe Firmino](mailto:filipefirmino@gec.inatel.br)
+[Filipe Mazzon Ribeiro](mailto:filipemazzon@gec.inatel.br)
+[Matheus Henrique da Silva](mailto:matheushenriquesilva@gec.inatel.br)
 ### licensa
 
 [MIT](/blob/master/LICENSE)
-
-
-
