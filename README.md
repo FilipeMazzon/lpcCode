@@ -135,4 +135,4 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
 
 ### licensa
 
-[MIT](/blob/master/LICENSE)
+[MIT](https://github.com/FilipeMazzon/lpcCode/blob/master/LICENSE)
