@@ -1,5 +1,5 @@
 # lpcCode
-Este e um projeto para testar o lpc1769 utilizando o FreeRTOS lidando com tarefas com filas de prioridades.
+Este e um projeto para testar o lpc1769 utilizando o [FreeRTOS](https://www.freertos.org/) lidando com tarefas com filas de prioridades.
 
 ## sumario:
 + [Descricao Geral](#descricao-geral)
