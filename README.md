@@ -29,8 +29,17 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
 + linguagem C.
 + IDE LPCExpress
 ### instalacao
-
-
+Recomendamos utilizar o Ubuntu 18.04 ou superior.
+Abra o terminal e execute o comando abaixo:
+```ssh
+sudo apt-get install libgtk2.0-0:i386 libxtst6:i386 libpangox-1.0-0 libpangoxft-1.0-0:i386 libidn11:i386 libglu1-mesa libncurses5:i386 libudev1:i386 libusb-1.0:i386 libusb-0.1 gtk2-engines-murrine:i386 libnss3
+```
+Após a instalação dos pacotes faça o download do arquivo e dentro da pasta dele execute:
+```
+ssh
+./Installer_LPCXpresso_8.2.2_650_Linux-x86
+```
+Aceite os termos e aguarde ser instalado a aplicação.
 ### requisitos
 
 
