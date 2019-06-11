@@ -4,20 +4,20 @@ Este e um projeto para testar o lpc1769 utilizando o [FreeRTOS](https://www.free
 ## sumario:
 + [Descricao Geral](#descricao-geral)
 + [Tecnologias](#tecnologias)
-+ [instalacao](#instalacao)
-+ [requisitos](#requisitos)
-+ [diagramas](#diagramas)
++ [Instalação](#instalacao)
++ [Requisitos](#requisitos)
++ [Diagramas](#diagramas)
     + [Diagrama de Blocos](#diagrama-de-blocos)
     + [Camada de Hardware](#camada-de-hardware)
 + [Implementacao](#implementacao)
     + [Tasks](#tasks)
 		+ [Contador 1](#contador-1)
 		+ [Contador 2](#contador-2)
-		+ [display](#display)
+		+ [Display OLED](#display)
 		+ [Sensor de luminosidade](#sensor-de-luminosidade)
-		+ [trimpot](#trimpot)
-+ [contatos](#contatos)
-+ [licensa](#licensa)
+		+ [Trimpot](#trimpot)
++ [Contatos](#contatos)
++ [Licença](#licença)
 
 ### Descricao Geral
 O projeto consiste na leitura de dados dos sensores de luminosidade e potenciômetro rotativo, cada um com uma tarefa específica. Os dados coletados são colocados em uma fila de mensagem.
@@ -25,21 +25,37 @@ A barra de LEDS verde deverá ser acionada conforme o valor do potenciômetro ro
 Duas tarefas com prioridades diferentes incrementam contadores a cada 100ms.
 Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentagem do potenciômetro e os dois contadores, sendo essa tarefa executada em background(IdleHook).
 
-### tecnologias
+### Tecnologias
 + linguagem C.
 + IDE LPCExpress
-### instalacao
+### Instalação
 Recomendamos utilizar o Ubuntu 18.04 ou superior.
 Abra o terminal e execute o comando abaixo:
 ```ssh
 sudo apt-get install libgtk2.0-0:i386 libxtst6:i386 libpangox-1.0-0 libpangoxft-1.0-0:i386 libidn11:i386 libglu1-mesa libncurses5:i386 libudev1:i386 libusb-1.0:i386 libusb-0.1 gtk2-engines-murrine:i386 libnss3
 ```
-Após a instalação dos pacotes faça o [download](http://www.mediafire.com/folder/doanbu436305w/LPC_Installer) dos arquivos e dentro da pasta dos arquivos em LPCINSTALLER execute o comando a seguir:
+Após a instalação dos pacotes execute o comando a seguir no terminal:
+```ssh
+cd /lib/i386-linux-gnu
+sudo ln -sf libudev.so.1 libudev.so.0
+```
+Feito o passo anterior, feche o terminal.
+
+Faça o [download](http://www.mediafire.com/file/l1cy63mgzqape29/Installer_LPCXpresso_8.2.2_650_Linux-x86.zip/file) do arquivo de instalação do LPCXPRESSO e descompacte o .zip. Acesse a pasta descompactada e execute o comando a seguir:
 ```ssh
 ./Installer_LPCXpresso_8.2.2_650_Linux-x86
 ```
 Aceite os termos e aguarde ser instalado a aplicação.
-### requisitos
+
+Com o término da instalação abra o terminal e execute o comando a seguir:
+```ssh
+export UBUNTU_MENUPROXY=0
+```
+Procure nos aplicativos instalados do sistema o LPCXPRESSO, caso não tenha disponível para abertura execute o comando a seguir no terminal:
+```ssh
+/usr/local/lpcxpresso_8.2.2_650/lpcxpresso/lpcxpresso
+```
+### Requisitos
 
 
 ### Diagramas
@@ -48,7 +64,7 @@ Aceite os termos e aguarde ser instalado a aplicação.
 ![](https://github.com/FilipeMazzon/lpcCode/blob/master/images/diagrama-de-blocos.jpg)
 #### Camada de Hardware
 ![](https://github.com/FilipeMazzon/lpcCode/blob/master/images/camada-de-hardware.jpeg)
-### implementacao
+### Implementacao
 #### Tasks
 ##### Contador 1
 ```
@@ -78,7 +94,7 @@ Aceite os termos e aguarde ser instalado a aplicação.
     	}
     }
 ```
-##### display
+##### Display OLED
 ```
     static void vReceiverTask( void *pvParameters )
     {
@@ -165,7 +181,7 @@ static void vSenderTaskLum( void *pvParameters )
 	}
 }
 ```
-##### trimpot
+##### Trimpot
 ```
 static void vSenderTaskPot( void *pvParameters )
 {
@@ -226,13 +242,13 @@ static void vSenderTaskPot( void *pvParameters )
 	}
 }
 ```
-### contatos
+### Contatos
 [Filipe Firmino](mailto:filipefirmino@gec.inatel.br)
 
 [Filipe Mazzon Ribeiro](mailto:filipemazzon@gec.inatel.br)
 
 [Matheus Henrique da Silva](mailto:matheushenriquesilva@gec.inatel.br)
 
-### licensa
+### Licença
 
 [MIT](https://github.com/FilipeMazzon/lpcCode/blob/master/LICENSE)
