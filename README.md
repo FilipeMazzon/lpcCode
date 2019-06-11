@@ -16,7 +16,7 @@ Este é um projeto para testar a placa LPC1769 utilizando o [FreeRTOS](https://w
 		+ [Display OLED](#display)
 		+ [Sensor de luminosidade](#sensor-de-luminosidade)
 		+ [Trimpot](#trimpot)
-+ [Bibliotecas de desenvolvimento](#biblioteca-de-desenvolvimento)
++ [Bibliotecas de desenvolvimento](#bibliotecas-de-desenvolvimento)
 + [Contatos](#contatos)
 + [Licença](#licença)
 
