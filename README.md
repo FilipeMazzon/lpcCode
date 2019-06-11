@@ -4,7 +4,7 @@ Este é um projeto para testar a placa LPC1769 utilizando o [FreeRTOS](https://w
 ## Sumário:
 + [Descricao Geral](#descricao-geral)
 + [Tecnologias](#tecnologias)
-+ [Instalar](#instalacao)
++ [Instalar](#instalar)
 + [Requisitos](#requisitos)
 + [Diagramas](#diagramas)
     + [Diagrama de Blocos](#diagrama-de-blocos)
