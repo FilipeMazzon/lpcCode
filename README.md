@@ -33,6 +33,13 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
 + Potênciometro trimpot disponível também na placa.
 + Middleware para o desenvolvimento de aplicações de tempo real.
 
+### Requisitos
++ Processador dual core 2 GHz ou superior; 
++ 4 GB memória RAM;
++ 32 GB livres no Hard-Disk (HD) *Contando também de que o sistema Linux será instalado na máquina;
++ Portas USB para implementação e DEBUGGING na placa;
++ Acesso a internet.
+
 ### Instalação
 Recomendamos utilizar o [Ubuntu 18.04](https://ubuntu.com/download/desktop) ou superior.
 Abra o terminal e execute o comando abaixo para instalar as depedências necessárias do ambiente de desenvolvimento:
@@ -60,12 +67,6 @@ Procure nos aplicativos instalados do sistema o LPCXPRESSO, caso não tenha disp
 ```ssh
 /usr/local/lpcxpresso_8.2.2_650/lpcxpresso/lpcxpresso
 ```
-### Requisitos
-+ Processador dual core 2 GHz ou superior; 
-+ 4 GB memória RAM;
-+ 32 GB livres no Hard-Disk (HD);
-+ Portas USB para implementação e DEBUGGING na placa;
-+ Acesso a internet.
 
 ### Diagramas
 #### Diagrama de Blocos
