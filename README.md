@@ -4,7 +4,7 @@ Este é um projeto para testar a placa LPC1769 utilizando o [FreeRTOS](https://w
 ## Sumário:
 + [Descricao Geral](#descricao-geral)
 + [Tecnologias](#tecnologias)
-+ [Instalar](#instalar)
++ [Instalação](#instalar)
 + [Requisitos](#requisitos)
 + [Diagramas](#diagramas)
     + [Diagrama de Blocos](#diagrama-de-blocos)
@@ -40,7 +40,7 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
 + Portas USB para implementação e DEBUGGING na placa;
 + Acesso a internet.
 
-### Instalar
+### Instalação
 Recomendamos utilizar o [Ubuntu 18.04](https://ubuntu.com/download/desktop) ou superior.
 Abra o terminal e execute o comando abaixo para instalar as depedências necessárias do ambiente de desenvolvimento:
 ```ssh
