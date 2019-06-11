@@ -4,7 +4,7 @@ Este é um projeto para testar a placa LPC1769 utilizando o [FreeRTOS](https://w
 ## Sumário:
 + [Descricao Geral](#descricao-geral)
 + [Tecnologias](#tecnologias)
-+ [Instalando o ambiente de desenvolvimento](#instalar)
++ [Instalando o ambiente de desenvolvimento](#instalando-o-ambiente-de-desenvolvimento)
 + [Requisitos](#requisitos)
 + [Diagramas](#diagramas)
     + [Diagrama de Blocos](#diagrama-de-blocos)
@@ -16,6 +16,7 @@ Este é um projeto para testar a placa LPC1769 utilizando o [FreeRTOS](https://w
 		+ [Display OLED](#display)
 		+ [Sensor de luminosidade](#sensor-de-luminosidade)
 		+ [Trimpot](#trimpot)
++ [Bibliotecas de desenvolvimento](#biblioteca-de-desenvolvimento)
 + [Contatos](#contatos)
 + [Licença](#licença)
 
@@ -38,10 +39,10 @@ Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentage
 + 4 GB memória RAM;
 + 32 GB livres no Hard-Disk (HD) *Contando também de que o sistema Linux será instalado na máquina;
 + Portas USB para implementação e DEBUGGING na placa;
-+ Acesso a internet.
++ Acesso à internet.
 
 ### Instalando o ambiente de desenvolvimento
-Recomendamos utilizar o [Ubuntu 18.04](https://ubuntu.com/download/desktop) ou superior.
+Para o ambiente de desenvolvimento foi utilizado a distribuição [Ubuntu 18.04](https://ubuntu.com/download/desktop) do Linux recomendamos utilizar esta ou superior.
 Abra o terminal e execute o comando abaixo para instalar as depedências necessárias do ambiente de desenvolvimento:
 ```ssh
 sudo apt-get install libgtk2.0-0:i386 libxtst6:i386 libpangox-1.0-0 libpangoxft-1.0-0:i386 libidn11:i386 libglu1-mesa libncurses5:i386 libudev1:i386 libusb-1.0:i386 libusb-0.1 gtk2-engines-murrine:i386 libnss3
@@ -51,13 +52,13 @@ Após a instalação dos pacotes execute o comando a seguir no terminal:
 cd /lib/i386-linux-gnu
 sudo ln -sf libudev.so.1 libudev.so.0
 ```
-Feito o passo anterior, feche o terminal.
+Feche o terminal.
 
-Faça o [download](http://www.mediafire.com/file/l1cy63mgzqape29/Installer_LPCXpresso_8.2.2_650_Linux-x86.zip/file) do arquivo de instalação do LPCXPRESSO e descompacte o .zip. Acesse a pasta descompactada e execute o comando a seguir:
+Faça o [download](http://www.mediafire.com/file/l1cy63mgzqape29/Installer_LPCXpresso_8.2.2_650_Linux-x86.zip/file) do arquivo de instalação do LPCXPRESSO e descompacte o *.zip*. A pasta gerada após a descompactação, abra o terminal dentro dela e execute o comando a seguir:
 ```ssh
 ./Installer_LPCXpresso_8.2.2_650_Linux-x86
 ```
-Aceite os termos e aguarde ser instalado a aplicação.
+Aceite os termos, avançe com a instalação de modo padrão com as configurações e aguarde ser instalado.
 
 Com o término da instalação abra o terminal e execute o comando a seguir:
 ```ssh
@@ -252,6 +253,9 @@ static void vSenderTaskPot( void *pvParameters )
 	}
 }
 ```
+
+### Bibliotecas de desenvolvimento
+
 ### Contatos
 [Filipe Firmino Lemos](mailto:filipefirmino@gec.inatel.br)
 
