@@ -17,6 +17,7 @@ Este é um projeto para testar a placa LPC1769 utilizando o [FreeRTOS](https://w
 		+ [Sensor de luminosidade](#sensor-de-luminosidade)
 		+ [Trimpot](#trimpot)
 + [Bibliotecas de desenvolvimento](#bibliotecas-de-desenvolvimento)
+    +[Utilizando as bibliotecas de desenvolvimento](#utilizando-as-bibliotecas-de-desenvolvimento)
 + [Contatos](#contatos)
 + [Licença](#licença)
 
@@ -255,6 +256,10 @@ static void vSenderTaskPot( void *pvParameters )
 ```
 
 ### Bibliotecas de desenvolvimento
+Para auxiliar no desenvolvimento do projeto simples no FreeRTOS, faça o [download](http://www.mediafire.com/file/1mcy1sfbtawt6w7/FreeRTOS-exemplos-CMSISv2p00.zip/file) do *.zip* que contém o código fonte necessário para executar os exemplos disponíveis e tratar os eventos. Para acessar os periféricos da Base-Board, faça [download](http://www.mediafire.com/file/xyqc8j3g4f76k3q/ExemplosBaseBoard-CMSIS2p00.zip/file) do .zip. Como importar e utilizar destes pacotes será abordado no próximo tópico.
+
+### Utilizando as bibliotecas de desenvolvimento
+Texto a ser redigido ainda
 
 ### Contatos
 [Filipe Firmino Lemos](mailto:filipefirmino@gec.inatel.br)
