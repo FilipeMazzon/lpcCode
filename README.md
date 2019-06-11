@@ -1,7 +1,7 @@
-# lpcCode
-Este e um projeto para testar o lpc1769 utilizando o [FreeRTOS](https://www.freertos.org/) lidando com tarefas com filas de prioridades.
+# LPCCode
+Este é um projeto para testar a placa LPC1769 utilizando o [FreeRTOS](https://www.freertos.org/) lidando com tarefas com filas de prioridades, sensores da placa Base-Board.
 
-## sumario:
+## Sumário:
 + [Descricao Geral](#descricao-geral)
 + [Tecnologias](#tecnologias)
 + [Instalação](#instalacao)
@@ -26,11 +26,16 @@ Duas tarefas com prioridades diferentes incrementam contadores a cada 100ms.
 Uma tarefa consiste em mostrar no display os valores de luminosidade, porcentagem do potenciômetro e os dois contadores, sendo essa tarefa executada em background(IdleHook).
 
 ### Tecnologias
-+ linguagem C.
-+ IDE LPCExpress
++ Linguagem C;
++ IDE LPCXpress;
++ Sistema operacional de tempo real (RTOS);
++ Sensor de luminosidade disponível na placa Base-Board;
++ Potênciometro trimpot disponível também na placa.
++ Middleware para o desenvolvimento de aplicações de tempo real.
+
 ### Instalação
-Recomendamos utilizar o Ubuntu 18.04 ou superior.
-Abra o terminal e execute o comando abaixo:
+Recomendamos utilizar o [Ubuntu 18.04](https://ubuntu.com/download/desktop) ou superior.
+Abra o terminal e execute o comando abaixo para instalar as depedências necessárias do ambiente de desenvolvimento:
 ```ssh
 sudo apt-get install libgtk2.0-0:i386 libxtst6:i386 libpangox-1.0-0 libpangoxft-1.0-0:i386 libidn11:i386 libglu1-mesa libncurses5:i386 libudev1:i386 libusb-1.0:i386 libusb-0.1 gtk2-engines-murrine:i386 libnss3
 ```
@@ -56,7 +61,11 @@ Procure nos aplicativos instalados do sistema o LPCXPRESSO, caso não tenha disp
 /usr/local/lpcxpresso_8.2.2_650/lpcxpresso/lpcxpresso
 ```
 ### Requisitos
-
++ Processador dual core 2 GHz ou superior; 
++ 4 GB memória RAM;
++ 32 GB livres no Hard-Disk (HD);
++ Portas USB para implementação e DEBUGGING na placa;
++ Acesso a internet.
 
 ### Diagramas
 #### Diagrama de Blocos
@@ -64,7 +73,7 @@ Procure nos aplicativos instalados do sistema o LPCXPRESSO, caso não tenha disp
 ![](https://github.com/FilipeMazzon/lpcCode/blob/master/images/diagrama-de-blocos.jpg)
 #### Camada de Hardware
 ![](https://github.com/FilipeMazzon/lpcCode/blob/master/images/camada-de-hardware.jpeg)
-### Implementacao
+### Implementação
 #### Tasks
 ##### Contador 1
 ```
@@ -243,7 +252,7 @@ static void vSenderTaskPot( void *pvParameters )
 }
 ```
 ### Contatos
-[Filipe Firmino](mailto:filipefirmino@gec.inatel.br)
+[Filipe Firmino Lemos](mailto:filipefirmino@gec.inatel.br)
 
 [Filipe Mazzon Ribeiro](mailto:filipemazzon@gec.inatel.br)
 
